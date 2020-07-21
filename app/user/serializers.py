@@ -47,7 +47,7 @@ class AuthTokenSerializer(serializers.Serializer):
             password=password
         )
         if not user:
-            msg = _('Unable to authenticate with providade credentials')
+            msg = _('Unable to authenticate with provided credentials')
             raise serializers.ValidationError(msg, code='authentication')
         attrs['user'] = user
         return attrs
